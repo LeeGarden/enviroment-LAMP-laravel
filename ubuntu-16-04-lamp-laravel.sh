@@ -60,8 +60,14 @@ sudo mysql_secure_installation
 
 echo "MySQL Server Installed Successfully!"
 
-# Install PHP
-sudo apt-get install -y php7.0 libapache2-mod-php7.0 php7.0-cli php7.0-common php7.0-mbstring php7.0-gd php7.0-intl php7.0-xml php7.0-mysql php7.0-mcrypt php7.0-zip
+# Install PHP7.1
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update
+sudo service apache2 stop
+sudo apt-get install php7.1 php7.1-common
+#Install PHP Extension
+sudo apt-get install php7.1-curl php7.1-xml php7.1-zip php7.1-gd php7.1-mysql php7.1-mbstring
+
 # Y to allow to use disk space
 
 # Inform Apache to prefer php files over html files
@@ -78,14 +84,6 @@ echo "php-cli, curl, mcrypt, mbstring Installed Successfully!"
 sudo a2enmod rewrite
 sudo a2enmod ssl
 
-# Install PHP Dev
-#sudo apt install php7.0-dev
-#echo "php7.0-dev Installed Successfully!"
-
-
-# Install PHP Zip Extension
-# sudo apt-get install php7.0-zip
-# echo "PHP Zip Extension Installed Successfully!"
 
 
 # Restart Apache Server
@@ -118,8 +116,8 @@ sudo systemctl reload apache2.service
 # Install GIT
 sudo apt-get install git
 echo "Git Installed Successfully!"
-git config --global user.name "Your Name"
-git config --global user.email "youremail@domain.com"
+git config --global user.name "Your Git's Name "
+git config --global user.email "Your Email"
 
 # Install Composer
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
@@ -127,4 +125,8 @@ echo "Composer Installed Successfully!"
 
 # Change owner of disk
 sudo chown -R root:root /var/www/
+#Change permission
+sudo chmod -R 777 /var/www/
+#Restart apache
+sudo systemctl restart apache2
 
