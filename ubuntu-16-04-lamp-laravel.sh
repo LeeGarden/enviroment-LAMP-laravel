@@ -66,7 +66,7 @@ sudo apt-get update
 sudo service apache2 stop
 sudo apt-get install php7.1 php7.1-common
 #Install PHP Extension
-sudo apt-get install php7.1-curl php7.1-xml php7.1-zip php7.1-gd php7.1-mysql php7.1-mbstring
+sudo apt-get install php7.1-curl php7.1-xml php7.1-zip php7.1-gd php7.1-mysql php7.1-mbstring php7.1-bcmath
 
 # Y to allow to use disk space
 
