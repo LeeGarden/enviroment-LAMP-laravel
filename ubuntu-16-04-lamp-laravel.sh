@@ -18,11 +18,11 @@
 sudo apt-get update
 
 # Install cURL & ZIP/UNZIP
-sudo apt-get install curl
-sudo apt-get install zip unzip
+sudo apt-get install -y curl
+sudo apt-get install -y zip unzip
 
 # Install Apache
-sudo apt-get install apache2
+sudo apt-get install -y apache2
 # Y to allow to use disk space
 echo "Apache Installed Successfully!"
 
@@ -48,7 +48,7 @@ echo "You can check whether the apache is installed properly by accessing public
 
 
 # Install MySQL Server
-sudo apt-get install mysql-server
+sudo apt-get install -y mysql-server
 # Y to allow to use disk space
 # Enter password for MySQL Root User, Please remeber the password. (Sample ROOT Password: T1umoN23X8W9tPAlQS9)
 
@@ -64,9 +64,9 @@ echo "MySQL Server Installed Successfully!"
 sudo add-apt-repository ppa:ondrej/php
 sudo apt-get update
 sudo service apache2 stop
-sudo apt-get install php7.1 php7.1-common
+sudo apt-get install -y php7.2 php7.2-common
 #Install PHP Extension
-sudo apt-get install php7.1-curl php7.1-xml php7.1-zip php7.1-gd php7.1-mysql php7.1-mbstring php7.1-bcmath
+sudo apt-get install -y php7.2-curl php7.2-xml php7.2-zip php7.2-gd php7.2-mysql php7.2-mbstring php7.2-bcmath
 
 # Y to allow to use disk space
 
@@ -75,7 +75,7 @@ sudo apt-get install php7.1-curl php7.1-xml php7.1-zip php7.1-gd php7.1-mysql ph
 # Move the index.php at first place
 
 # Install PHP Required Extensions
-# sudo apt-get install php-cli php-mbstring php-gettext php-curl
+# sudo apt-get install -y php-cli php-mbstring php-gettext php-curl
 # sudo phpenmod mcrypt
 # sudo phpenmod mbstring
 # sudo phpenmod curl
@@ -95,7 +95,7 @@ echo "Your Home Directory is /var/www/html/. You can start using that Home Direc
 
 # PHPMyAdmin & Other Extensions
 echo "Installing PHPMyAdmin for DB Access & Other Extensions."
-sudo apt-get install phpmyadmin
+sudo apt-get install -y phpmyadmin
 
 # For the server selection, choose apache2.
 # Select yes when asked whether to use dbconfig-common to set up the database
@@ -114,7 +114,7 @@ sudo systemctl reload apache2.service
 # =================================================
 
 # Install GIT
-sudo apt-get install git
+sudo apt-get install -y git
 echo "Git Installed Successfully!"
 git config --global user.name "Your Git's Name "
 git config --global user.email "Your Email"
